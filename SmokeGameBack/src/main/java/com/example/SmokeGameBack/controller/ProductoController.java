@@ -22,20 +22,17 @@ public class ProductoController {
         return productoRepository.findAll();
     }
 
-    
     @GetMapping("/{id}")
     public ResponseEntity<Producto> getProductById(@PathVariable Long id) {
         Optional<Producto> producto = productoRepository.findById(id);
         return producto.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    
     @PostMapping
     public Producto createProduct(@RequestBody Producto producto) {
         return productoRepository.save(producto);
     }
 
-    
     @PutMapping("/{id}")
     public ResponseEntity<Producto> updateProduct(@PathVariable Long id, @RequestBody Producto productoDetails) {
         Optional<Producto> productoOptional = productoRepository.findById(id);
@@ -56,7 +53,6 @@ public class ProductoController {
         }
     }
 
-    
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
         if (productoRepository.existsById(id)) {
@@ -65,5 +61,11 @@ public class ProductoController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/oferta-del-dia")
+    public ResponseEntity<String> obtenerOfertaDelDia() {
+        String oferta = "¡Oferta del día! Europa Universalis IV con 50% de descuento.";
+        return ResponseEntity.ok(oferta);
     }
 }
