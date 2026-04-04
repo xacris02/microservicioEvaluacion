@@ -58,7 +58,7 @@ public class PedidoController {
         if (pedido != null) {
             pedido.setEstado("COMPLETADO");
             pedidoRepository.save(pedido);
-            return ResponseEntity.ok("Reembolso rechazado");
+            return ResponseEntity.ok("Reembolso rechazado")
         }
         return ResponseEntity.notFound().build();
     }
