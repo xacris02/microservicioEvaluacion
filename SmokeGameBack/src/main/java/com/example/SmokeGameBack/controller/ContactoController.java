@@ -28,9 +28,9 @@ public class ContactoController {
             contacto.setMensaje(datos.get("mensaje"));
             
             contactoRepository.save(contacto);
-            return ResponseEntity.ok("Mensaje recibido correctamente");
+            return ResponseEntity.ok("Proceso Exitoso");
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body("Error al guardar mensaje");
+            return ResponseEntity.badRequest().body("Error mensaje no guardado.");
         }
     }
 
