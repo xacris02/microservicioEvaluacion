@@ -30,3 +30,19 @@ Uso de Pull Requests (PR): Toda integración de código hacia la rama develop se
 Verificación Local: Antes de aceptar un Pull Request, el código se debe probar localmente.
 Comunicación Interna: Se comenta al compañero sobre los cambios que se van realizando.
 Resolución de Conflictos: Si Github detecta un conflicto de merge, comparar ambos códigos y resolver el conflicto manualmente. (Nos paso cuando Alvaro no podia hacer un mergue, ya que habia conflicto en el archivo Radme.txt)
+
+Estructura de Carpetas
+Para mantener el orden del microservicio, el equipo debe respetar esta estructura:
+controller/: Para los controladores REST.
+model/: Para las entidades de la base de datos.
+repository/: Para las interfaces de acceso a datos.
+.github/workflows/: Carpeta exclusiva para los pipelines DevOps.
+
+Reglas de Commits Oficiales
+Además de registrar nuestros cambios, el equipo establece usar prefijos para estandarizar el historial:
+feat: (nuevas funcionalidades).
+fix: (arreglos urgentes).
+docs: (documentación).
+
+Automatización y CI/CD
+Se configuró GitHub Actions como nuestra herramienta de automatización. Su rol fundamental en nuestro proceso CI/CD es garantizar la Integración Continua (CI): el pipeline se ejecuta automáticamente con cada push a develop y PR a main, verificando el flujo sin que tengamos que hacerlo manualmente.
